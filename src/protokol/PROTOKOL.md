@@ -6,16 +6,16 @@ baru yang disetujui pembimbing.
 
 | Butir | Isi |
 |---|---|
-| Kasus (dari kartu Kasus tim) | … |
-| Sumber dataset | … (tautan dari kartu Kasus tim) |
-| Jenis tugas (`TUGAS`) | klasifikasi / regresi |
-| Target / label | … |
-| Ukuran data latih / validasi / uji | … / … / … |
-| Cara split | `split.indeks` seed 2026, porsi validasi 10 % (atau `indeks_urut` untuk deret waktu) |
-| Metrik utama untuk komparasi | macro-F1 (klasifikasi) / RMSE (regresi) |
-| Praproses yang sama untuk semua model | … |
-| Anggaran komputasi per run | ≤ 20 menit CPU laptop (atau yang disetujui pembimbing) |
-| Evaluasi data uji | sekali, oleh Penjaga Data, pada sprint terakhir (`--final`) |
-| `data_hash` saat dibekukan | … (dari `results/baseline/metrics.json`) |
+| Kasus (dari kartu Kasus tim) | Deteksi biner kata bangun (*wake-word detection*) "Halo Meja" menggunakan Log-Mel Spectrogram 64 pita berdurasi 1 detik untuk pengembangan pemicu suara pada perangkat meja. |
+| Sumber dataset | Dataset primer direkam sendiri oleh tim pada meja uji menggunakan mikrofon 16 kHz. Referensi starter repository: https://github.com/sains-data/capstone-dl-2026-starter. Data bersama berupa rekaman program harian. Data dari tim lain hanya boleh digunakan sebagai data uji tambahan. |
+| Jenis tugas (`TUGAS`) | Klasifikasi biner. |
+| Target / label | Positif: ucapan target "HALO MEJA". Negatif: rekaman program harian. Ucapan pembanding "halo teman", "meja makan", dan kondisi diam digunakan dalam rancangan pengambilan data sesuai ketentuan kartu kasus. |
+| Ukuran data latih / validasi / uji | Belum ditetapkan; diisi berdasarkan jumlah data aktual setelah pengumpulan dan pembagian data. |
+| Cara split | Pemisahan berdasarkan peserta, sesi, atau blok rekaman menggunakan pendekatan GroupKFold untuk mencegah kebocoran data. Seed 2026 digunakan sesuai mekanisme pembagian data yang disepakati dan diimplementasikan pada `src.common.split`. |
+| Metrik utama untuk komparasi | False Alarms per Hour (FA/hour) pada rekaman program harian sebagai metrik utama dan Recall sebagai metrik pendamping. Hasil dilaporkan sebagai rata-rata ± simpangan baku dari 3 seed. Ukuran model ONNX (KB) dan latensi (ms) pada laptop meja juga dicatat. |
+| Praproses yang sama untuk semua model | Audio direkam dengan sampling rate 16 kHz. Satu detik pertama setiap kondisi dibuang. Audio diproses menjadi Log-Mel Spectrogram 64 pita berdurasi 1 detik. Normalisasi dihitung dari data latih saja dan diterapkan secara konsisten pada data validasi dan data uji. |
+| Anggaran komputasi per run | Maksimal 20 menit menggunakan CPU laptop atau sesuai persetujuan pembimbing. |
+| Evaluasi data uji | Evaluasi dilakukan satu kali oleh Penjaga Data & Evaluasi pada sprint terakhir menggunakan opsi `--final`. Data dari tim lain hanya digunakan sebagai data uji tambahan. |
+| `data_hash` saat dibekukan | Diisi berdasarkan nilai `data_hash` dari `results/baseline/metrics.json` setelah baseline berhasil dijalankan. |
 
 Disetujui pembimbing pada: … (tautan *pull request*)
