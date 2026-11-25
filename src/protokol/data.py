@@ -20,7 +20,7 @@ def muat():
 
     tr, va = split.indeks(len(X))
 
-    X_test = np.random.randn(20, fitur_logmel, waktu_frames).astype(np.float32)
+    X_test = np.random.randn(20, fitur_logmel, waktu_frames)
     y_test = np.random.randint(0, 2, size=(20,)).astype(np.int64)
 
     return X[tr], y[tr], X[va], y[va], X_test, y_test
