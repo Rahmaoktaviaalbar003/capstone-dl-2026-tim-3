@@ -4,7 +4,7 @@ Satu dokumen bersama, enam bagian. Angka di bagian Hasil ditarik dari `results/*
 (tabel otomatis: `reports/hasil_komparasi.md` dari `python run_all.py`).
 
 ## Ringkasan
-Laporan ini membandingkan kinerja jalur pembanding (*baseline*) non-*deep learning* dengan empat jalur arsitektur *deep learning* (*Transfer Learning*, CNN dari nol, *Autoencoder*, dan RNN/LSTM/GRU) pada dataset utama proyek menggunakan protokol pembagian data yang seragam. Temuan awal menetapkan batas bawah (*lower bound*) kinerja dari jalur *baseline* sebesar `val_acc` **0.3** dan `val_macro_f1` **0.230769** sebagai acuan perbaikan bagi seluruh jalur model tim.
+Membandingkan kinerja jalur pembanding (*baseline*) non-*deep learning* dengan empat jalur arsitektur *deep learning* (*Transfer Learning*, CNN dari nol, *Autoencoder*, dan RNN/LSTM/GRU) pada dataset utama proyek menggunakan protokol pembagian data yang seragam. Temuan awal menetapkan batas bawah (*lower bound*) kinerja dari jalur *baseline* sebesar `val_acc` **0.3** dan `val_macro_f1` **0.230769** sebagai acuan perbaikan bagi seluruh jalur model tim.
 
 ## Protokol
 * **Pembagian Data (*Split*):** Menggunakan *split* beku (`seed 2026`) melalui modul protokol tim (`src/common/split.py`) agar seluruh jalur model dievaluasi pada partisi data validasi dan uji yang identik.
