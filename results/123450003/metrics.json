@@ -3,11 +3,11 @@
     "val_acc": 0.3,
     "val_macro_f1": 0.230769
   },
-  "seed": 2026,
+  "seed": 1,
   "data_hash": "8a4f9ea63ad4efff168acbdef7898c37",
-  "perangkat": "cpu laptop",
-  "model": "baseline",
+  "perangkat": "cpu",
+  "model": "tl",
   "n_val": 10,
   "n_test": 0,
-  "durasi_detik": 0.1
+  "durasi_detik": 5.7
 }
