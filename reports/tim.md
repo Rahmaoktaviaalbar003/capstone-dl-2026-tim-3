@@ -23,7 +23,7 @@ Tabel komparasi sementara (batas bawah *baseline* telah tercatat dari `results/b
 | **Autoencoder** | Representasi laten / *Autoencoder* | *Dalam proses* | *Dalam proses* | *Dalam proses* | *Dalam proses* | *Menunggu evaluasi akhir* |
 | **RNN / LSTM / GRU** | Model sekuensial rekuren | *Dalam proses* | *Dalam proses* | *Dalam proses* | *Dalam proses* | *Menunggu evaluasi akhir* |
 
-* **Analisis Kesalahan (Baseline):** Pada tahap pembanding awal (`val_acc` 0.3, `val_macro_f1` 0.230769), model klasik cenderung memprediksi kelas mayoritas sehingga kelas minoritas sering tertukar dan menurunkan skor *macro F1*.
+* **Analisis Kesalahan (Baseline):** Tahap pembanding awal (`val_acc` 0.3, `val_macro_f1` 0.230769), model klasik cenderung memprediksi kelas mayoritas sehingga kelas minoritas sering tertukar dan menurunkan skor *macro F1*.
 
 ## Analisis
 * **Fakta Eksperimen:** Model *baseline* non-*deep learning* menghasilkan `val_acc` sebesar 0.3 dan `val_macro_f1` sebesar 0.230769 pada partisi validasi standar.

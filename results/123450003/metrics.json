@@ -5,9 +5,9 @@
   },
   "seed": 1,
   "data_hash": "8a4f9ea63ad4efff168acbdef7898c37",
-  "perangkat": "cpu laptop",
+  "perangkat": "cpu",
   "model": "tl",
   "n_val": 10,
   "n_test": 0,
-  "durasi_detik": 4.1
+  "durasi_detik": 5.7
 }
